@@ -21,6 +21,7 @@ public class Menu_Inicio extends JFrame {
 	JLabel img;
 	Icon   fondo;
 	frameJuego juego = new frameJuego("Pacman");
+	frameRecords records = new frameRecords("RANKING");
 	
 	
 	public Menu_Inicio(String title) {
@@ -60,7 +61,7 @@ public class Menu_Inicio extends JFrame {
 		
 		botonesHandler handler = new botonesHandler();
 		b1.addActionListener(handler);
-		juego.b2.addActionListener(handler);
+		b2.addActionListener(handler);
 		
 		this.getContentPane().add(panel1, BorderLayout.CENTER);
 		this.getContentPane().add(panel2, BorderLayout.SOUTH);
@@ -78,6 +79,10 @@ public class Menu_Inicio extends JFrame {
 		public void actionPerformed(ActionEvent e) {
 			if(e.getSource().equals(b1)) {
 				juego.setVisible(true);
+			}
+			
+			if(e.getSource().equals(b2)) {
+				records.setVisible(true);
 			}
 			
 		}
